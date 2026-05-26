@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="humanoid_robotics_12_18">
+  <link name="base_link">
+    <inertial>
+     <origin xyz="-0.006 0.000 0.254" rpy="0 0 0" />
+        <!-- 质量：与SolidWorks一致 -->
+        <mass value="47.989" />
+        <inertia ixx="1.680" ixy="-0.003" ixz="0.067" 
+                 iyy="1.506" iyz="-0.003" izz="0.749" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="Left_leg_yaw_link">
+    <inertial>
+     <origin xyz="-0.027 0.000 -0.041" rpy="0 0 0" />
+      <mass value="1.878" />
+      <inertia ixx="0.006" ixy="0.000" ixz="0.003" 
+               iyy="0.012" iyz="0.000" izz="0.009" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_leg_yaw_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_leg_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Left_leg_yaw_joint" type="revolute">
+    <origin xyz="-0.0017724 0.11756 -0.0305" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Left_leg_yaw_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.1745" upper="0.6981" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Left_leg_roll_link">
+    <inertial>
+     <origin xyz="0.003 0.000 -0.004" rpy="0 0 0" />
+      <mass value="1.189" />
+      <inertia ixx="0.002" ixy="0.000" ixz="0.000" 
+               iyy="0.003" iyz="0.000" izz="0.003" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_leg_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_leg_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Left_leg_roll_joint" type="revolute">
+    <origin xyz="0 0 -0.079" rpy="0 0 0" />
+    <parent link="Left_leg_yaw_link" />
+    <child link="Left_leg_roll_link" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.5236" upper="0.5236" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Left_leg_pitch_link">
+    <inertial>
+       <origin xyz="-0.008 0.004 -0.182" rpy="0 0 0" />
+      <mass value="6.942" />
+      <inertia ixx="0.105" ixy="0.000" ixz="-0.002" 
+               iyy="0.104" iyz="0.000" izz="0.020" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_leg_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_leg_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Left_leg_pitch_joint" type="revolute">
+    <origin xyz="3.1428E-05 0.00025494 -0.073014" rpy="0 0 0" />
+    <parent link="Left_leg_roll_link" />
+    <child link="Left_leg_pitch_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.6581" upper="0.2618" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Left_knee_pitch_link">
+    <inertial>
+      <origin xyz="0.039 0.001 -0.146" rpy="0 0 0" />
+      <mass value="4.264" />
+      <inertia ixx="0.036" ixy="0.000" ixz="0.004" 
+               iyy="0.037" iyz="0.000" izz="0.016" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_knee_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_knee_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Left_knee_pitch_joint" type="revolute">
+    <origin xyz="0 -1.0982E-05 -0.38999" rpy="0 0 0" />
+    <parent link="Left_leg_pitch_link" />
+    <child link="Left_knee_pitch_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.0873" upper="2.1817" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Left_ankle_roll_link">
+    <inertial>
+      <origin xyz="-0.001 -0.001 0.000" rpy="0 0 0" />
+      <mass value="0.124" />
+      <inertia ixx="0.000" ixy="0.000" ixz="0.000" 
+               iyy="0.000" iyz="0.000" izz="0.000" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_ankle_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_ankle_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Left_ankle_roll_joint" type="revolute">
+    <origin xyz="-3.4425E-05 -0.00024396 -0.34" rpy="0 0 0" />
+    <parent link="Left_knee_pitch_link" />
+    <child link="Left_ankle_roll_link" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.6981" upper="0.4363" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Left_ankle_pitch_link">
+    <inertial>
+      <origin xyz="0.040 0.000 -0.076" rpy="0 0 0" />
+      <mass value="1.474" />
+      <inertia ixx="0.003" ixy="0.000" ixz="0.000" 
+               iyy="0.007" iyz="0.000" izz="0.008" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_ankle_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Left_ankle_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Left_ankle_pitch_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="Left_ankle_roll_link" />
+    <child link="Left_ankle_pitch_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.5236" upper="0.5236" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Right_leg_yaw_link">
+    <inertial>
+      <origin xyz="-0.027 0.000 -0.041" rpy="0 0 0" />
+      <mass value="1.878" />
+      <inertia ixx="0.006" ixy="0.000" ixz="0.003" 
+               iyy="0.012" iyz="0.000" izz="0.009" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_leg_yaw_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_leg_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Right_leg_yaw_joint" type="revolute">
+    <origin xyz="-0.0017724 -0.11744 -0.0305" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Right_leg_yaw_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.6981" upper="0.1745" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Right_leg_roll_link">
+    <inertial>
+       <origin xyz="0.003 0.000 -0.004" rpy="0 0 0" />
+      <mass value="1.189" />
+      <inertia ixx="0.002" ixy="0.000" ixz="0.000" 
+               iyy="0.003" iyz="0.000" izz="0.003" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_leg_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_leg_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Right_leg_roll_joint" type="revolute">
+    <origin xyz="0 0 -0.079" rpy="0 0 0" />
+    <parent link="Right_leg_yaw_link" />
+    <child link="Right_leg_roll_link" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.5236" upper="0.5236" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Right_leg_pitch_link">
+    <inertial>
+      <origin xyz="-0.008 0.004 -0.182" rpy="0 0 0" />
+      <mass value="6.942" />
+      <inertia ixx="0.105" ixy="0.000" ixz="-0.002" 
+               iyy="0.103" iyz="0.000" izz="0.020" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_leg_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_leg_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Right_leg_pitch_joint" type="revolute">
+    <origin xyz="3.1428E-05 0.00025494 -0.073014" rpy="0 0 0" />
+    <parent link="Right_leg_roll_link" />
+    <child link="Right_leg_pitch_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.6581" upper="0.2618" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Right_knee_pitch_link">
+    <inertial>
+      <origin xyz="0.041 0.000 -0.144" rpy="0 0 0" />
+      <!-- 替换为SW截图的质量：4.264千克 -->
+      <mass value="4.264" />
+      <!-- 替换为SW中“由重心决定”的惯性张量 -->
+      <inertia ixx="0.034" ixy="0.000" ixz="0.004" 
+               iyy="0.036" iyz="-0.001" izz="0.017" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_knee_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_knee_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Right_knee_pitch_joint" type="revolute">
+    <origin xyz="0 -1.0982E-05 -0.38999" rpy="0 0 0" />
+    <parent link="Right_leg_pitch_link" />
+    <child link="Right_knee_pitch_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.0873" upper="2.1817" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Right_ankle_roll_link">
+    <inertial>
+       <origin xyz="-0.001 -0.001 0.000" rpy="0 0 0" />
+      <mass value="0.124" />
+      <inertia ixx="0.000" ixy="0.000" ixz="0.000" 
+               iyy="0.000" iyz="0.000" izz="0.000" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_ankle_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_ankle_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Right_ankle_roll_joint" type="revolute">
+    <origin xyz="-3.4425E-05 -0.00024396 -0.34" rpy="0 0 0" />
+    <parent link="Right_knee_pitch_link" />
+    <child link="Right_ankle_roll_link" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.6981" upper="0.4363" effort="0" velocity="0" />
+  </joint>
+  
+  <link name="Right_ankle_pitch_link">
+    <inertial>
+      <origin xyz="0.040 0.000 -0.076" rpy="0 0 0" />
+      <!-- 替换为SW截图的质量：1.474千克 -->
+      <mass value="1.474" />
+      <!-- 替换为SW中“由重心决定”的惯性张量 -->
+      <inertia ixx="0.003" ixy="0.000" ixz="0.000" 
+               iyy="0.007" iyz="0.000" izz="0.008" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_ankle_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://humanoid_robotics_12_18/meshes/Right_ankle_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="Right_ankle_pitch_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="Right_ankle_roll_link" />
+    <child link="Right_ankle_pitch_link" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.5236" upper="0.5236" effort="0" velocity="0" />
+  </joint>
+</robot>
